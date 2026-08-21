@@ -1,3 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+		font-family: 'DM Sans', sans-serif;
+		color: #172033;
+		background: #f8fafc;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-width: 320px;
+		margin: 0;
+		overflow-x: hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Space Grotesk', sans-serif;
+	}
+
+	button,
+	a {
+		-webkit-tap-highlight-color: transparent;
+	}
+}
+
+@layer components {
+	.page-container {
+		width: min(100% - 2rem, 1180px);
+		margin-inline: auto;
+	}
+
+	@media (min-width: 640px) {
+		.page-container {
+			width: min(100% - 3rem, 1180px);
+		}
+	}
+}
+
+/* Let each page section use the full viewport; its own px-* classes provide breathing room. */
+.container {
+	max-width: 100% !important;
+}

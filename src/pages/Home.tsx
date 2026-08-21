@@ -76,20 +76,20 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             {/* Hero content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-6"
+              className="space-y-5 text-center lg:space-y-6 lg:text-left"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium"
+                className="inline-block rounded-full bg-blue-100 px-3 py-2 text-xs font-medium text-blue-800 sm:px-4 sm:text-sm"
               >
                 Premium Salt Distributors Since 1995
               </motion.div>
@@ -98,7 +98,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl md:text-6xl"
               >
                 Pure Salt,
                 <span className="text-blue-600"> Premium Quality</span>
@@ -108,7 +108,7 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-xl text-gray-600 max-w-xl"
+                className="mx-auto max-w-xl text-base leading-7 text-gray-600 sm:text-lg lg:mx-0 lg:text-xl"
               >
                 India's trusted salt distributor providing industrial, edible, and retail salt products to customers nationwide with uncompromising quality and service.
               </motion.p>
@@ -117,13 +117,13 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col justify-center gap-3 sm:flex-row lg:justify-start"
               >
                 <Link to="/products">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors font-medium text-center"
+                    className="block rounded-full bg-blue-600 px-7 py-3 text-center font-medium text-white transition-colors hover:bg-blue-700 sm:px-8"
                   >
                     Explore Products
                   </motion.div>
@@ -132,7 +132,7 @@ const Home = () => {
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-600 hover:text-white transition-colors font-medium text-center"
+                    className="block rounded-full border-2 border-blue-600 px-7 py-3 text-center font-medium text-blue-600 transition-colors hover:bg-blue-600 hover:text-white sm:px-8"
                   >
                     Book Order
                   </motion.div>
@@ -145,16 +145,16 @@ const Home = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative"
+              className="relative mx-auto w-full max-w-lg"
             >
-              <div className="relative w-full h-96 bg-gradient-to-br from-blue-100 to-teal-100 rounded-3xl overflow-hidden shadow-2xl">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-blue-100 to-teal-100 shadow-2xl sm:aspect-[16/10] lg:aspect-[4/3]">
                 <div className="absolute inset-0 bg-gradient-to-t from-white via-gray-50 to-transparent opacity-90"></div>
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute inset-0 flex items-center justify-center"
                 >
-                  <div className="w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center text-6xl font-bold text-blue-600">
+                  <div className="flex h-32 w-32 items-center justify-center rounded-full bg-white text-5xl font-bold text-blue-600 shadow-lg sm:h-44 sm:w-44 sm:text-6xl">
                     🧂
                   </div>
                 </motion.div>
@@ -167,10 +167,10 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
+            className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3 sm:gap-6 lg:gap-8"
           >
             {features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
+              <div key={index} className="rounded-xl bg-white p-5 text-center shadow-lg sm:p-6">
                 <feature.icon className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>

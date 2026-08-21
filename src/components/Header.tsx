@@ -16,6 +16,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -30,7 +34,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm'
       }`}
     >
@@ -54,16 +58,16 @@ const Header = () => {
       </div>
 
       {/* Main navigation */}
-      <nav className="container mx-auto px-4 py-4">
+      <nav className="container mx-auto px-4 py-3 sm:py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold text-blue-900"
+              className="text-xl font-bold text-blue-900 sm:text-2xl"
             >
               MD & CO
-              <span className="text-teal-600 text-sm font-normal block">Premium Salt</span>
+              <span className="block text-xs font-normal text-teal-600 sm:text-sm">Premium Salt</span>
             </motion.div>
           </Link>
 
@@ -97,7 +101,9 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-800 p-2"
+              aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isMenuOpen}
+              className="rounded-lg p-2 text-gray-800 transition-colors hover:bg-slate-100"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
